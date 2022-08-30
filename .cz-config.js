@@ -9,16 +9,21 @@ module.exports = {
     { value: 'perf', name: 'perf: 性能优化' },
     { value: 'test', name: 'test: 测试' },
     { value: 'build', name: 'build: 构建' },
+    { value: 'fixCss', name: '样式修改' },
     { value: 'ci', name: 'ci: CI/CD' },
   ],
   // 步骤
   messages: {
     type: '选择提交类型:',
+    // ~ 修改文件的范围
     customScope: '选择提交范围(可选):',
     subject: '填写提交标题(必填):',
     body: '请输入详细描述(可选):',
     footer: '请输入要关闭的issue(可选):',
     confirmCommit: '确认提交?(y/n)',
   },
+  // 跳过步骤
+  skipQuestions: ['body', 'footer'],
+  subjectLimit: 100,
 
 }
