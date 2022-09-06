@@ -10,7 +10,7 @@ module.exports = {
     { value: 'test', name: 'test: 测试' },
     { value: 'build', name: 'build: 构建' },
     { value: 'fixCss', name: '样式修改' },
-    { value: 'ci', name: 'ci: CI/CD' },
+    { value: 'ci', name: 'ci: CI/CD' }
   ],
   // 步骤
   messages: {
@@ -20,10 +20,10 @@ module.exports = {
     subject: '填写提交标题(必填):',
     body: '请输入详细描述(可选):',
     footer: '请输入要关闭的issue(可选):',
-    confirmCommit: '确认提交?(y/n)',
+    confirmCommit: '确认提交?(y/n)'
   },
   // 跳过步骤
   skipQuestions: ['body', 'footer'],
-  subjectLimit: 100,
+  subjectLimit: 100
 
 }
