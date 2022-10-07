@@ -6,24 +6,26 @@
       </div>
       <el-form-item>
         <span class="svg-container">
-          <span class="svg-container">
-            <svg-icon icon="https://res.lgdsunday.club/user.svg"></svg-icon>
-          </span>
+          <svg-icon icon="user"></svg-icon>
         </span>
         <el-input v-model="username" placeholder="请输入用户名"></el-input>
       </el-form-item>
       <el-form-item>
+        <span class="svg-container">
+          <svg-icon icon="password"></svg-icon>
+        </span>
         <el-input v-model="password" placeholder="请输入密码"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="login">登录</el-button>
+        <el-button type="primary" @click="login" class="login-button"
+          >登录</el-button
+        >
       </el-form-item></el-form
     >
   </div>
 </template>
 
 <script setup>
-import { Avatar } from '@element-plus/icons'
 import SvgIcon from '@/components/SvgIcon/index.vue';
 import { ref } from 'vue';
 const username = ref('');
@@ -55,6 +57,28 @@ $cursor: #fff;
     border-radius: 4px;
     color: #454545;
     background-color: rgba(0, 0, 0, 0.2);
+  }
+  ::v-deep .el-form-item__content {
+    display: flex;
+  }
+  ::v-deep .el-input__inner {
+    color: $cursor;
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    &::placeholder {
+      color: $light_gray;
+    }
+  }
+  .login-button {
+    width: 100%;
+  }
+  .svg-container {
+    display: inline-block;
+    margin-left: 5px;
   }
 }
 </style>

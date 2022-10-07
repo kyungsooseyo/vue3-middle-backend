@@ -9,7 +9,7 @@
     ></div>
     <!-- 展示内部图标 -->
     <svg v-else class="svg-icon" :class="className" aria-hidden="true">
-      <use :xlink:href="iconName"></use>
+      <use :xlink:href="internalIcon"></use>
     </svg>
   </div>
 </template>
@@ -52,11 +52,12 @@ const internalIcon = computed(() => {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  display: inline-block;
 }
 .svg-external-icon {
   display: inline-block;
-  // width: 1em;
-  // height: 1em;
+  width: 1em;
+  height: 1em;
   // vertical-align: -0.15em;
   // fill: currentColor;
   // overflow: hidden;
