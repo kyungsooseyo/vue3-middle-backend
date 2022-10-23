@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import SvgIcon from '@/components/SvgIcon/index.vue';
+import SvgIcon from '@/components/SvgIcon/index';
 import API from '@/utils/request'
 import { validatePassword } from './rule';
 import { ref, onMounted } from 'vue';
