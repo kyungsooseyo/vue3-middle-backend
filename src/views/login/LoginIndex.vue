@@ -42,6 +42,13 @@
           :loading="loading"
           >登录</el-button
         >
+        <el-button
+          type="primary"
+          @click="handleTest"
+          class="login-button"
+          :loading="loading"
+          >test</el-button
+        >
       </el-form-item></el-form
     >
   </div>
@@ -49,6 +56,7 @@
 
 <script setup>
 import SvgIcon from '@/components/SvgIcon/index.vue';
+import API from '@/utils/request'
 import { validatePassword } from './rule';
 import { ref, onMounted } from 'vue';
 import { useStore } from 'vuex'
@@ -83,7 +91,7 @@ const onChangePwdType = () => {
 const handleLogin = () => {
   //` 1.表单校验
   loginFormRef.value.validate((valid) => {
-    console.log('valid',valid)
+    console.log('valid', valid)
     if (!valid) {
       return
     } else {
@@ -99,6 +107,11 @@ const handleLogin = () => {
   })
   //` 2.触发登录事件
   //` 3.登录成功后跳转到首页
+}
+const handleTest = () => {
+  API.get('/feature').then(res => {
+    console.log("🚀 ~ file: LoginIndex.vue ~ line 102 ~ handleTest ~ res", res)
+  })
 }
 </script>
 

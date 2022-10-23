@@ -1,6 +1,31 @@
 import axios from 'axios'
+import { ElMessage } from 'element-plus'
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000
+})
+service.interceptors.request.use(config => {
+  return config
+}, error => {
+  return Promise.reject(error)
+})
+service.interceptors.response.use(response => {
+  if (response.status === 200) {
+    ElMessage({
+      message: '请求成功',
+      grouping: true,
+      type: 'success',
+    })
+    return response.data
+  } else {
+    ElMessage({
+      message: '请求失败',
+      grouping: true,
+      type: 'error',
+    }) // ~ 未知错误
+    return Promise.reject(response)
+  }
+}, error => {
+  return Promise.reject(error)
 })
 export default service

@@ -1,4 +1,4 @@
-import { userLogin } from '@/api/sys'
+import { userLogin } from '@/api/sys.js'
 import md5 from 'md5'
 export default {
   namespaced: true,
