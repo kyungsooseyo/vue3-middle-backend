@@ -6,6 +6,11 @@ const publicRoutes = [
     path: '/login',
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '../views/login/LoginIndex.vue')
+  },
+  {
+    path: '/',
+    name: 'layout',
+    component: () => import(/* webpackChunkName: "layout" */ '../layout/index.vue')
   }
 ]
 

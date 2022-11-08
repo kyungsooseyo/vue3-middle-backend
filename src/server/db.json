@@ -134,5 +134,8 @@
         "distributePermission"
       ]
     }
+  },
+  "getLogin": {
+    "token": "Bearer d8c6ed7a-3fd4-46e4-a477-b20d1ce9cda0"
   }
 }

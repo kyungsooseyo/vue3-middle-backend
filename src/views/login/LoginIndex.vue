@@ -138,7 +138,7 @@ $cursor: #fff;
     max-width: 100%;
     overflow: hidden;
   }
-  ::v-deep .el-form-item {
+  ::v-deep(.el-form-item)  {
     // margin-bottom: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;

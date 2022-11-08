@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 export const userLogin = (data) => {
   return request({
-    url: '/login',
+    url: '/getLogin',
     method: 'get',
     data
   })
