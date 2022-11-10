@@ -8,6 +8,7 @@ import 'element-plus/lib/theme-chalk/index.css';
 import '../src/assets/style/index.scss';
 import installIcons from '@/icons/index';
 import '@/permission'
+import '@/styles/index.scss'
 const app = createApp(App)
 installIcons(app)
 installElementPlus(app)
