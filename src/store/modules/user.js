@@ -1,19 +1,23 @@
-import { userLogin } from '@/api/sys.js'
+import { userLogin, getUserInfo } from '@/api/sys.js'
 import { setItem, getItem } from '@/utils/storage'
 import { TOKEN } from '@/constant/index'
 import md5 from 'md5'
-import router  from '@/router/index'
+import router from '@/router/index'
 // ~ userRouter好像只能写在setUp里面
 // const userRouter1 = useRouter()
 export default {
   namespaced: true,
   state: () => ({
     token: getItem(TOKEN) || '',
+    userInfo: {}
   }),
   mutations: {
     setToken(state, token) {
       state.token = token
       setItem(TOKEN, token)
+    },
+    setUserInfo(state, userInfo) {
+      state.userInfo = userInfo
     }
   },
   actions: {
@@ -30,6 +34,13 @@ export default {
           reject(err)
         })
       })
+    },
+    // ~ 获取用户信息
+    async getUserInfo(ctx) {
+      const userInfo = await getUserInfo()
+      console.log("🚀 ~ file: user.js ~ line 36 ~ getUserInfo ~ userInfo", userInfo)
+      this.commit('user/setUserInfo', userInfo)
+      return userInfo
     }
   }
 }

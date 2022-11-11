@@ -6,3 +6,10 @@ export const userLogin = (data) => {
     data
   })
 }
+export const getUserInfo=(data)=>{
+  return request({
+    url: '/login',
+    method: 'get',
+    data
+  })
+}
