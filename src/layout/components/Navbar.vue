@@ -17,7 +17,7 @@
             <el-dropdown-item @click="handleClick('2')"
               >切换账号</el-dropdown-item
             >
-            <el-dropdown-item @click="handleClick('3')"
+            <el-dropdown-item @click="handleLogout()"
               >退出登录</el-dropdown-item
             >
           </el-dropdown-menu>
@@ -32,6 +32,9 @@ import { ref } from 'vue';
 import { useStore } from 'vuex';
 const store = useStore();
 const avatarUrl = ref(store.getters.userInfo.avatar)
+const handleLogout = () => {
+  store.dispatch('user/logout')
+}
 </script>
 
 <style lang="scss" scoped>

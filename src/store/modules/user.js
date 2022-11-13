@@ -1,8 +1,9 @@
 import { userLogin, getUserInfo } from '@/api/sys.js'
-import { setItem, getItem } from '@/utils/storage'
+import { setItem, getItem, removeAllItem } from '@/utils/storage'
 import { TOKEN } from '@/constant/index'
 import md5 from 'md5'
 import router from '@/router/index'
+import { setTimeStamp } from '@/utils/auth';
 // ~ userRouter好像只能写在setUp里面
 // const userRouter1 = useRouter()
 export default {
@@ -29,6 +30,8 @@ export default {
         userLogin({ username: username.trim(), password: md5(password) }).then(res => {
           this.commit('user/setToken', res.token)
           router.push('/')
+          //. 保存登录时间
+          setTimeStamp()
           resolve(res)
         }).catch(err => {
           reject(err)
@@ -41,6 +44,13 @@ export default {
       console.log("🚀 ~ file: user.js ~ line 36 ~ getUserInfo ~ userInfo", userInfo)
       this.commit('user/setUserInfo', userInfo)
       return userInfo
+    },
+    logout() {
+      this.commit('user/setToken', '')
+      this.commit('user/setUserInfo', {})
+      removeAllItem()
+      //todo 处理权限
+      router.push('/login')
     }
   }
 }
