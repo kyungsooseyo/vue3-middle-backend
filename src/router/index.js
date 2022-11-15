@@ -93,6 +93,7 @@ const privateRoutes = [
         component: () => import('@/views/article-create/index.vue'),
         meta: {
           title: '文章创建',
+          icon: 'el-icon-document'
         }
       },
       {
