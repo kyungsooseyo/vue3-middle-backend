@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="svg-icon-container">
     <!-- 展示外部图标 -->
     <div
       v-if="isExternal"
@@ -15,8 +15,8 @@
 </template>
 
 <script setup>
-import { defineProps, computed } from 'vue';
-import { isExternal as external } from '@/utils/validate';
+import { defineProps, computed } from 'vue'
+import { isExternal as external } from '@/utils/validate'
 const props = defineProps({
   icon: {
     type: String,
@@ -36,7 +36,7 @@ const isExternal = computed(() => {
 const externalIconStyle = computed(() => {
   return {
     // backgroundImage: `url(${props.icon})`
-    mask: `url(${props.icon}) no-repeat 50% 50%`,
+    mask: `url(${props.icon}) no-repeat 50% 50%`
   }
 })
 //~ 内部图标
@@ -46,6 +46,9 @@ const internalIcon = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+.svg-icon-container {
+  display: inline-block;
+}
 .svg-icon {
   width: 1em;
   height: 1em;

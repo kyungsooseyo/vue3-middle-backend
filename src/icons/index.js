@@ -5,7 +5,7 @@ import SvgIcon from "@/components/SvgIcon/index.vue";
 const svgRequire = require.context('./svg', false, /\.svg$/)
 // 返回了一个require函数，可以接受一个request参数
 // 该函数提供了三个属性
-console.log(svgRequire.keys());
+console.log('svg',svgRequire.keys());
 svgRequire.keys().forEach((item => {
   svgRequire(item)
 }))

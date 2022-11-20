@@ -76,15 +76,17 @@ const privateRoutes = [
         component: () => import('@/views/article-ranking/index.vue'),
         meta: {
           title: '文章排行',
-          icon: 'el-icon-document'
+          icon: 'el-icon-rank'
         }
       },
+      // ! 如果没有icon这个字段 是不会显示在左侧菜单栏的
       {
         path: '/article/:id',
         name: 'articleDetail',
         component: () => import('@/views/article-detail/index.vue'),
         meta: {
           title: '文章详情',
+          icon: 'el-icon-postcard'
         }
       },
       {
@@ -93,7 +95,7 @@ const privateRoutes = [
         component: () => import('@/views/article-create/index.vue'),
         meta: {
           title: '文章创建',
-          icon: 'el-icon-document'
+          icon: 'el-icon-document-add'
         }
       },
       {

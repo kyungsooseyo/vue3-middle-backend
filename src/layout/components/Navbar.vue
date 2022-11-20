@@ -5,7 +5,7 @@
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <el-avatar shape="square" :size="40" :src="avatarUrl"></el-avatar>
-          <el-icon size="30"><Setting /></el-icon>
+          <el-icon :size="30"><Setting /></el-icon>
         </div>
         <template #dropdown>
           <el-dropdown-menu>

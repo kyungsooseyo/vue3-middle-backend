@@ -26,11 +26,11 @@ service.interceptors.request.use(config => {
 })
 service.interceptors.response.use(response => {
   if (response.status === 200) {
-    ElMessage({
-      message: '请求成功',
-      grouping: true,
-      type: 'success',
-    })
+    // ElMessage({
+    //   message: '请求成功',
+    //   grouping: true,
+    //   type: 'success',
+    // })
     return response.data
   } else {
     ElMessage.error({
