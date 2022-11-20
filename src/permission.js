@@ -11,7 +11,7 @@ router.beforeEach(async (to, from, next) => {
       next('/')
     } else {
       //. 如果不存在用户信息 则去获取
-      if (!store.getters.hashUerInfo) {
+      if (!store.getters.hasUserInfo) {
         await store.dispatch('user/getUserInfo')
       }
       next()

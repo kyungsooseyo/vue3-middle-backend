@@ -1,5 +1,8 @@
 <template>
-  <div class="app-wrapper">
+  <div
+    class="app-wrapper"
+    :class="[isCollapse ? 'openSidebar' : 'hideSidebar']"
+  >
     <!-- 左侧menu -->
     <sidebar
       class="sidebar-container"
@@ -23,6 +26,10 @@ import Sidebar from './components/Sidebar/index.vue'
 // ! 需要使用css module的形式才能生效
 import variables from '@/styles/variables.module.scss'
 // console.log('vvv', variables);
+import { useStore } from 'vuex'
+import { computed } from 'vue'
+const store = useStore()
+const isCollapse = computed(() => store.getters.sidebarOpened)
 </script>
 
 <style lang="scss" scoped>
